@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+{% block title %}Pagina de inicio de sistemas de empleados{% endblock title %}
+
+
+{% load static %}
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<!-- Incio de la imagen de portada -->
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+    <div class="orbit-wrapper">
+        <div class="orbit-controls">
+        <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+        <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+        </div>
+        <ul class="orbit-container">
+            <li class="is-active orbit-slide">
+                <figure class="orbit-figure">
+                <img class="orbit-image" src="{% static 'img/sliderInicio/01.jpg' %}" alt="Space">
+                <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+                </figure>
+            </li>
+            <li class="orbit-slide">
+                <figure class="orbit-figure">
+                <img class="orbit-image" src="{% static 'img/sliderInicio/02.jpg' %}" 2lt="Space">
+                <figcaption class="orbit-caption">Lets Rocket!</figcaption>
+                </figure>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- Fin incio de la imagen de portada -->
+
+
+<!-- Bloque de bienvenida -->
+<div class="grid-x center align-center">
+    <h1 class="cell large-8" style="font-size: 25px; text-align: center; text-transform: uppercase;">
+        Bienvenido al sistema de Registro de Empleados
+    </h1>
+    <div class="cell large-7 callout success">
+        <h5>Registra y controla el empleado</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi nobis maxime animi quas fugit ipsum, nulla cumque impedit rerum laborum molestiae alias voluptatibus officiis eum commodi quisquam, expedita, corrupti similique!</p>
+        <a href="#">Ver empleados</a>
+    </div>
+</div>
+<!-- Fin del bloque de bienvenida -->
+
+{% endblock content %}

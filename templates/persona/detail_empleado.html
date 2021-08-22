@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}
+    {{ empleado.full_name }}
+{% endblock title %}
+    
+
+{% block content %}
+{% include 'includes/header.html' %}
+
+
+<div class="grid-container">
+    <div class="grid-x align-center">
+        <div class="card cell" style="width: 300px; margin-top: 50px;">
+            <div class="card-divider">
+                <h4>{{ object.get_job_display }}</h4>
+            </div>
+            
+            {% if empleado.avatar %}
+            <img src="{{ empleado.avatar.url }}">
+            {% else %}
+            <img src="{% static 'img/sliderInicio/01.jpg' %}">
+            {% endif %}
+                
+            <div class="card-section">
+                <h4>{{empleado.full_name}}</h4>
+                <p>{{empleado.first_name}}</p>
+                <p>{{empleado.last_name}}</p>
+                <p>{{empleado.departamento.name}}</p>
+                <ul class="nested vertical menu">
+                    <p><span class="label">Habilidades:</span></p>
+                    {% for habilidad in empleado.habilidades.all %}
+                    <li>
+                        {{habilidad.habilidad}}
+                    </li>
+                    {% endfor %}
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+    

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+    Editar empleado admin
+{% endblock title %}
+    
+
+{% block content %}
+    {% include 'includes/header.html' %}
+    <div class="grid-container">
+        <class class="grid-x">
+            <h1 class="cell">Modificar datos del empleado</h1>
+            <div class="cell">
+                <form class="grid-x grid-margin-x" method="POST"> {% csrf_token %}
+                    <div class="medium-6 cell">
+                        <label>Nombres
+                            {{form.first_name}}
+                        </label>
+                    </div>
+                    <div class="medium-6 cell">
+                        <label>Apellidos
+                            {{form.last_name}}
+                        </label>
+                    </div>
+                    <div class="medium-6 cell">
+                        <label>Trabajo
+                            {{form.job}}
+                        </label>
+                    </div>
+                    <div class="medium-6 cell">
+                        <label>Departamento
+                            {{form.departamento}}
+                        </label>
+                    </div>
+                    <div class="medium-6 cell">
+                        <label>Habilidades
+                            {{form.habilidades}}
+                        </label>
+                    </div>
+
+                    <div class="medium-12 cell">
+                        <label>Hoja de Vida
+                        </label>
+                        {{form.hoja_vida}}
+                    </div>
+
+                    <button type="submit" class="success button">Guardar</button>
+                </form>
+            </div>
+        </class>
+    </div>
+    
+{% endblock content %}
+    

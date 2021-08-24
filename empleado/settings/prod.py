@@ -31,6 +31,7 @@ STATICFILES_DIRS = [BASE_DIR.child('static')]
 # Esto es para poder cargar imagenes en la carpeta media y su URL
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.child('media')
+STATIC_ROOT = BASE_DIR.child('staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
